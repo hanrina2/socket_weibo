@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css" rel="stylesheet">
+    <style>
+        h1 {
+            position: relative;
+            left: 10px
+        }
+        img {
+            position: relative;
+            left: 10px
+        }
+    </style>
+
+    <title>主页</title>
+</head>
+<body>
+    <h1>Hello {{username}}</h1>
+    <img src="/static?file=doge.gif"/>
+    <img src="/static?file=doge1.jpg"/>
+    <img src="/static?file=doge2.gif"/>
+        <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a class="pure-menu-link" href="/user/register/view">Register</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link" href="/user/login/view" >Login</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link" href="/weibo/index">Weibo</a></li>
+        </ul>
+    </div>
+    <br>
+</body>
+</html>

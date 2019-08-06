@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+            left: 10px
+        }
+    </style>
+    <title>weibo更新</title>
+</head>
+<body>
+    <h2>weibo更新</h2>
+    <form class="pure-form" action="/weibo/update" method="post">
+        <input hidden="hidden" name="id" placeholder="id" value="{{ weibo.id }}"></input>
+        <br>
+        <input name="content" placeholder="content" value="{{ weibo.content }}"></input>
+        <button class="pure-button">更新</button>
+    </form>
+</body>
+</html>

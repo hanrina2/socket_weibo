@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css" rel="stylesheet">
+    <title>weibo页面</title>
+    <style>
+        .comment {
+            border: 3px transparent solid;
+        }
+        body {
+            position: relative;
+            left: 10px
+        }
+    </style>
+</head>
+<body>
+    <a class="pure-menu-heading"  style="position:relative; left:1400px;" href="/">返回首页</a></li>
+    <form class="pure-form" action="/weibo/add" method="post">
+        <input name="content">
+        <button class="pure-button" type="submit">发表新微博</button>
+    </form>
+
+{% for w in weibos %}
+    <p>
+        {{ w.user().username }}：{{ w.content }}
+        <a href="/weibo/delete?id={{ w.id }}">删除</a>
+        <a href="/weibo/edit?id={{ w.id }}">修改</a>
+        {% for c in w.comments() %}
+            <div class="comment">
+                {{ c.user().username }} 评论: {{ c.content }}
+                <a href="/comment/delete?id={{ c.id }}">删除</a>
+                <a href="/comment/edit?id={{ c.id }}">修改</a>
+            </div>
+        {% endfor %}
+        <form class="pure-form" action="/comment/add" method="post">
+            <input type="hidden" name="weibo_id" value="{{ w.id }}">
+            <input name="content">
+            <button class="pure-button" type="submit">添加评论</button>
+        </form>
+    </p>
+{% endfor %}
+</body>
+</html>

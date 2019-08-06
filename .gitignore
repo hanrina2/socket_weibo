@@ -1,0 +1,8 @@
+*.pyc
+log.top.txt
+*.log
+log.*
+.idea
+.DS_store
+secret.py
+*.7z
