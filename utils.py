@@ -7,8 +7,8 @@ def log(*args, **kwargs):
     localtime = time.localtime(int(time.time()))
     formatted = time.strftime(time_format, localtime)
     with open('log.top.txt', 'a', encoding='utf-8') as f:
-        print(formatted, *args, **kwargs)
-        print(formatted, *args, file=f, **kwargs)
+        print('[Log:]', formatted, *args, **kwargs)
+        print('[Log:]', formatted, *args, file=f, **kwargs)
 
 
 def random_string():
